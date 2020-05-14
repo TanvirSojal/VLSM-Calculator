@@ -23,7 +23,7 @@ public class VLSMController {
         return "Welcome to VLSM Calculator!";
     }
 
-    @PostMapping("/allocate")
+    @PostMapping("/allocation")
     public ResponseEntity<List<HostGroup>> allocate(@RequestBody IPAllocationRequest request){
         try {
             return ResponseEntity.ok(vlsmService.allocate(request));
@@ -31,6 +31,4 @@ public class VLSMController {
             return ResponseEntity.badRequest().build();
         }
     }
-
-
 }

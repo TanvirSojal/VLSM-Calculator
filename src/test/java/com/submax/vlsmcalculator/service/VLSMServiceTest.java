@@ -26,9 +26,9 @@ public class VLSMServiceTest {
 
     @Test
     public void ipNotationTest() {
-        IP ip = new IP(783, 12);
+        IP ip = new IP(2065834519L, 12);
         String notation = ip.getAddressNotation();
-        String required = "0.0.3.15/12";
+        String required = "123.34.34.23/12";
         assertEquals(required, notation);
     }
 
