@@ -23,6 +23,7 @@ public class VLSMController {
         return "Welcome to VLSM Calculator!";
     }
 
+    @CrossOrigin
     @PostMapping("/allocation")
     public ResponseEntity<List<HostGroup>> allocate(@RequestBody IPAllocationRequest request){
         try {
