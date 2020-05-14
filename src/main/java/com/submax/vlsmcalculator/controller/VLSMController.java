@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("api/v1/vlsm-calculator")
 public class VLSMController {
@@ -22,7 +23,6 @@ public class VLSMController {
     public String hello(){
         return "Welcome to VLSM Calculator!";
     }
-
     @CrossOrigin
     @PostMapping("/allocation")
     public ResponseEntity<List<HostGroup>> allocate(@RequestBody IPAllocationRequest request){
