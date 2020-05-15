@@ -18,9 +18,9 @@ public class SubnetCalculator {
         List<HostGroup> hostGroupList = new ArrayList<>();
         for (HostGroupRequest hostGroupRequest : hostGroupRequestList){
             hostGroupRequest.setSize(hostGroupRequest.getSize() + 2);
-            System.out.println(hostGroupRequest.toString());
+//            System.out.println(hostGroupRequest.toString());
             HostGroup hostGroup = allocateHostGroup(nextAvailableNetworkAddress, hostGroupRequest);
-            System.out.println(hostGroup.getNetworkAddress());
+//            System.out.println(hostGroup.getNetworkAddress());
             hostGroupList.add(hostGroup);
             nextAvailableNetworkAddress = new IP(hostGroup.getBroadcastAddress().getAddressValue()+1, hostGroup.getBroadcastAddress().getCidr());
         }
@@ -43,7 +43,7 @@ public class SubnetCalculator {
         long netId = networkAddress.getAddressValue();
         int cidr = networkAddress.getCidr();
 
-        System.out.println("Bits needed: " + hostBits);
+//        System.out.println("Bits needed: " + hostBits);
         if (32 - cidr < hostBits){
             throw new IPSpaceException("Not enough IP Space!");
         }
